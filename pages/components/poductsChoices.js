@@ -12,18 +12,19 @@ const PoductsChoices = ({data, currentPosts, }) => {
       info.brand === state.brand ||
       info.product_type === state.ProductType
       );
-
+/*
      useEffect(() => {
       data.map(info => {
         setRating(Math.round(info.rating))
       })
      },[])
+     */
     return (
       <div>
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {SearchBarFilter.map( info => {
             return(
-              <div className="col">
+              <div className="col" key={info.id}>
                 <div className="card h-100">
                   <Link href={'/plp/' + info.id} key={info.id}>
                     <img src={info.image_link} className="card-img-top" alt="..." key={info.id} style={{height: '400px'}}/>
