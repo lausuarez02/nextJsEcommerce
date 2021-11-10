@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { AppContext } from '../context/context';
 import Link from 'next/link'
+//import Image from 'next/image'
 
 const PoductsChoices = ({data, currentPosts, }) => {
   const state = useContext(AppContext)
