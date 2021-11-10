@@ -21,7 +21,7 @@ const PDP = ({data}) => {
 };
 
 export const getStaticPaths = async () => {
-    const res = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json');
+    const res = await fetch('https://makeup-api.herokuapp.com/api/v1/products.json');
     const data = await res.json();
   
     // map data to an array of path objects with params (id)
@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const res = await fetch('http://makeup-api.herokuapp.com/api/v1/products/' + id + '.json');
+    const res = await fetch('https://makeup-api.herokuapp.com/api/v1/products/' + id + '.json');
     const data = await res.json();
     return{
         props: {

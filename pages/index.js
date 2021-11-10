@@ -39,7 +39,7 @@ export default function Home({data}) {
 
 export async function getServerSideProps(){
   
-  const res = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json')
+  const res = await fetch('https://makeup-api.herokuapp.com/api/v1/products.json')
   const data = await res.json()
   return{
     props:{
