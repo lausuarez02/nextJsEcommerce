@@ -18,14 +18,13 @@ const Pagination = ({ paginate,postsPerPage, totalPosts}) => {
       let lastPage = totalPosts[totalPosts.length - 1];
     return (
         <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul className="pagination">
         {pageNumbers.map(number => (
-               <li key={number} className="page-item">
-               <a onClick={() => paginate(number)}  className="page-link">
-                   {number}
-               </a>
-        
-           </li>
+     <li className={ number ? 'page-item active' : 'page-item'}>
+     <button className="page-link" onClick={() => pageNumber(number, 'num')}>
+         {number}
+     </button>
+ </li>
         ))}
         {/*
           <li class="page-item">

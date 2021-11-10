@@ -8,7 +8,7 @@ const SubTitle = ({data}) => {
         if(a.brand < b.brand) return -1;
         if(a.brand > b.brand) return 1;
         return 0;
-    }).map((item, i) => <li key={i} ><a class="dropdown-item" onClick={(e) => state.setBrand(e.target.outerText)}>{item.brand}</a></li>);
+    }).map((item, i) => <li key={i} ><a className="dropdown-item" onClick={(e) => state.setBrand(e.target.outerText)}>{item.brand}</a></li>);
   
     //failed attemp to do a max price
 /*
@@ -27,11 +27,11 @@ const SubTitle = ({data}) => {
                       <button type="button" className="btn btn-sm btn-outline-secondary" onClick={(e) => state.setState(e.target)}>Max Price</button>
                     </div>
                
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Brands
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             {AlphabeticalOrderBrands}
                         </ul>
                     </div>

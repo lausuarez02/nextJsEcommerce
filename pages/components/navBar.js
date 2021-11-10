@@ -1,19 +1,12 @@
-import {useState, useContext} from 'react';
-import { handleChange } from '../handlers/filters';
-import {AppContext} from '../context/context';
+//vendors
+import {useContext} from 'react';
 import Link from 'next/link';
+import {AppContext} from '../context/context';
+
 
 export default function NavBar(){
-  /* const value = useContext(useAppContext);
-  const state = useContext(useAppContext);
-  const { user } = state || {};
-  console.log(state);*/
   const state = useContext(AppContext);
-  /*export const SearchBarFilter = data.filter(info => 
-    info.brand.toLowerCase().includes(search.toLowerCase()) ||
-    info.name.toLowerCase().includes(search.toLowerCase()) ||
-    info.product_type.toLowerCase().includes(search.toLowerCase())
-    );*/
+
     return(
         <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
           <Link href={'/'}>

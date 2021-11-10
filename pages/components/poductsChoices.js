@@ -20,22 +20,22 @@ const PoductsChoices = ({data, currentPosts, }) => {
      },[])
     return (
       <div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
           {SearchBarFilter.map( info => {
             return(
-              <div class="col">
-                <div class="card h-100">
+              <div className="col">
+                <div className="card h-100">
                   <Link href={'/plp/' + info.id} key={info.id}>
-                    <img src={info.image_link} class="card-img-top" alt="..." key={info.id} style={{height: '400px'}}/>
+                    <img src={info.image_link} className="card-img-top" alt="..." key={info.id} style={{height: '400px'}}/>
                   </Link>
-                  <div class="card-body">
-                    <h5 class="card-title">{info.name}</h5>
-                    <h6 class="card-title">{info.price}{info.price_sign} {info.currency}</h6>
+                  <div className="card-body">
+                    <h5 className="card-title">{info.name}</h5>
+                    <h6 className="card-title">{info.price}{info.price_sign} {info.currency}</h6>
                     
                   </div>
-                  <div class="card-footer">
-                    <small class="text-muted">
-                    <div class="rating"> 
+                  <div className="card-footer">
+                    <small className="text-muted">
+                    <div className="rating"> 
                       <div>
                           <div>
                             <label for="5">☆</label> <label for="5">☆</label> <label for="5">☆</label> <label for="5">☆</label> <label for="4">☆</label>

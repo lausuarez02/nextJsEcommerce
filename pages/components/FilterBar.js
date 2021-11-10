@@ -10,7 +10,7 @@ const FilterBar = ({data}) => {
       if(a.product_type < b.product_type) return -1;
       if(a.product_type > b.product_type) return 1;
       return 0;
-  }).map((item, i) => <li key={i} ><a class="dropdown-item" onClick={(e) => state.setProductType(e.target.outerText)}>{item.product_type}</a></li>);
+  }).map((item, i) => <li key={i} ><a className="dropdown-item" onClick={(e) => state.setProductType(e.target.outerText)}>{item.product_type}</a></li>);
   
     return (
         <div>
@@ -18,11 +18,11 @@ const FilterBar = ({data}) => {
             <div className="position-sticky pt-3">
               <ul className="nav flex-column">
                 <li className="nav-item">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="dropdown">
+                  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Products
                   </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                       {AlphabeticalOrderProductType}
                     </ul>
                 </div>
