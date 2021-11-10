@@ -12,7 +12,7 @@ const CardPlp = ({data}) => {
                  <div className="card-body">
                   <h5 className="card-title">{data.name}</h5>
                   <p className="card-text">{data.description}</p>
-                  <p className="card-text">{data.product_colors.map((info) => { let stylse = info.hex_value; return(<ul style={{display: 'inline'}}><li style={{display: 'inline'}} ><span className="badge rounded-pill" style={{backgroundColor: {stylse}}}> </span></li></ul>)})}</p>
+                  <p className="card-text">{data.product_colors.map((info) => { let stylse = info.hex_value; return(<ul key={info.id} style={{display: 'inline'}}><li style={{display: 'inline'}} ><span className="badge rounded-pill" style={{backgroundColor: {stylse}}}> </span></li></ul>)})}</p>
                   <p className="card-text"><small className="text-muted">Rating: {data.rating} stars</small></p>
                  </div>
               </div>

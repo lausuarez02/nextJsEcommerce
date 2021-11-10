@@ -20,7 +20,7 @@ const Pagination = ({ paginate,postsPerPage, totalPosts}) => {
         <nav aria-label="Page navigation example">
         <ul className="pagination">
         {pageNumbers.map(number => (
-     <li className={ number ? 'page-item active' : 'page-item'}>
+     <li className={ number ? 'page-item active' : 'page-item'} key={number.id}>
      <button className="page-link" onClick={() => pageNumber(number, 'num')}>
          {number}
      </button>

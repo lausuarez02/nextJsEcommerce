@@ -38,7 +38,7 @@ const PoductsChoices = ({data, currentPosts, }) => {
                     <div className="rating"> 
                       <div>
                           <div>
-                            <label for="5">☆</label> <label for="5">☆</label> <label for="5">☆</label> <label for="5">☆</label> <label for="4">☆</label>
+                            <label htmlFor="5">☆</label> <label htmlFor="5">☆</label> <label htmlFor="5">☆</label> <label htmlFor="5">☆</label> <label htmlFor="4">☆</label>
                           </div>
                           {info.rating}
                          </div> 
