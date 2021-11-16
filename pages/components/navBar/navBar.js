@@ -1,7 +1,7 @@
 //vendors
 import {useContext} from 'react';
 import Link from 'next/link';
-import {AppContext} from '../context/context';
+import {AppContext} from '@context/context';
 
 
 export default function NavBar(){

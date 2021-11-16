@@ -1,8 +1,6 @@
-import NavBar from "../components/navBar";
+import NavBar from "@components/navBar/navBar";
 import {useState, useEffect} from 'react';
-import CardPlp from '../components/cardPlp';
-
-let outsideUrl
+import CardPlp from '@components/CardPlp/cardPlp';
 
 const PDP = ({data}) => {
     /*//failed attemp to filter by ?grater_than=

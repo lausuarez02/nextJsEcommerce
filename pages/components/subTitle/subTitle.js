@@ -1,22 +1,15 @@
-import React, {useContext} from 'react';
-import {AppContext} from '../context/context';
+import React, {useContext, useMemo} from 'react';
+import {AppContext} from '@context/context';
+import { AlphabeticalOrderBrands, duplicateCheckBrandsFunction, duplicateMapBrands } from '@handlers/filters';
 
 const SubTitle = ({data}) => {
     const state = useContext(AppContext);
 
-    const AlphabeticalOrderBrands = data.sort((a, b) => {
-        if(a.brand < b.brand) return -1;
-        if(a.brand > b.brand) return 1;
-        return 0;
-    }).map((item, i) => <li key={i} ><a className="dropdown-item" onClick={(e) => state.setBrand(e.target.outerText)}>{item.brand}</a></li>);
-  
-    //failed attemp to do a max price
-/*
-    if(state.state){
-        data.sort((a,b) => {state.setMaxPrice(a.price - b.price)})
-    }
-    */
-    //const DoNotRepeatBrands = Array.from(new Set(data.brand))
+    const duplicateCheckBrands = [];
+    const AlphabeticalOrderBrandsHandler = useMemo(() => AlphabeticalOrderBrands({ data: data, setBrand: state.setBrand}))
+    const duplicateCheckBrandsFunctionHandler = useMemo(() => duplicateCheckBrandsFunction({ AlphabeticalOrderBrandsHandler: AlphabeticalOrderBrandsHandler, duplicateCheckBrands:duplicateCheckBrands }))
+    const duplicateMapBrandsHandler = useMemo(() => duplicateMapBrands({ duplicateCheckBrands: duplicateCheckBrands, setBrand: state.setBrand}))
+
     return (
         <div>
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -32,7 +25,7 @@ const SubTitle = ({data}) => {
                             Brands
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            {AlphabeticalOrderBrands}
+                            {duplicateMapBrandsHandler}
                         </ul>
                     </div>
                  </div>

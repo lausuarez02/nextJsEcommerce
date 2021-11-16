@@ -1,33 +1,23 @@
-import React, {useContext, useEffect, useState} from 'react';
-import { AppContext } from '../context/context';
+import React, {useContext, useState, useMemo} from 'react';
+import { AppContext } from '@context/context';
 import Link from 'next/link'
-//import Image from 'next/image'
+import { SearchBarFilter } from '@handlers/filters';
 
-const PoductsChoices = ({data, currentPosts, }) => {
+const ProductsChoices = ({data, currentPosts, }) => {
   const state = useContext(AppContext)
   const [rating, setRating] = useState(4)
 
-    const SearchBarFilter = currentPosts.filter(info => 
-      info.name.toLowerCase().includes(state.search.toLowerCase()) ||
-      info.product_type.toLowerCase().includes(state.search.toLowerCase()) ||
-      info.brand === state.brand ||
-      info.product_type === state.ProductType
-      );
-/*
-     useEffect(() => {
-      data.map(info => {
-        setRating(Math.round(info.rating))
-      })
-     },[])
-     */
+      const SearchBarFilter01 = useMemo(() => 
+      SearchBarFilter({data: data, search: state.search, brand: state.brand, Product: state.ProductType}))
+      
     return (
       <div>
         <div className="row row-cols-1 row-cols-md-3 g-4">
-          {SearchBarFilter.map( info => {
+          {SearchBarFilter01.map( info => {
             return(
               <div className="col" key={info.id}>
                 <div className="card h-100">
-                  <Link href={'/plp/' + info.id} key={info.id}>
+                  <Link href={'/screens/plp/' + info.id} key={info.id}>
                     <img src={info.image_link} className="card-img-top" alt="..." key={info.id} style={{height: '400px'}}/>
                   </Link>
                   <div className="card-body">
@@ -56,4 +46,4 @@ const PoductsChoices = ({data, currentPosts, }) => {
     );
 };
 
-export default PoductsChoices;
+export default ProductsChoices;

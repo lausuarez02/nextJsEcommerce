@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Head from "next/head";
 import Script from 'next/script'
-import { AppWrapper } from '../pages/context/context';
+import { AppWrapper } from '@context/context';
 
 function MyApp({ Component, pageProps }) {
   return(

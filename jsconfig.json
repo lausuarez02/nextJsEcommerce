@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@components/*": ["pages/components/*"],
+        "@handlers/*": ["pages/handlers/*"],
+        "@context/*": ["pages/context/*"]
+      }
+    }
+  }

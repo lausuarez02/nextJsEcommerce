@@ -150,6 +150,12 @@ body {
     opacity: 1 !important
 }
 
+.rating>label:before,
+.rating>label~label:before {
+    opacity: 1 !important
+}
+
+
 .rating>input:checked~label:before {
     opacity: 1
 }

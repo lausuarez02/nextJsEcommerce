@@ -1,13 +1,13 @@
 //components
-import NavBar from "./components/navBar";
-import FilterBar from './components/FilterBar';
-import Caroussel from './components/Caroussel';
-import PoductsChoices from "./components/poductsChoices";
-import SubTitle from './components/subTitle';
+import NavBar from "@components/navBar/navBar";
+import FilterBar from '@components/FilterBar/FilterBar';
+import Caroussel from '@components/Caroussel';
+import ProductsChoices from "@components/ProductsChoices/ProductsChoices";
+import SubTitle from '@components/subTitle/subTitle';
 //vendors
 import React, { useEffect,useState, useContext } from "react";
-import { AppContext } from "./context/context";
-import Pagination from "./components/pagination";
+import { AppContext } from "@context/context";
+import Pagination from "@components/pagination";
 
 export default function Home({data}) {
   const state = useContext(AppContext);
@@ -29,7 +29,7 @@ export default function Home({data}) {
       <FilterBar data={data}/>
       <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
        <SubTitle data={data}/>
-       <PoductsChoices data={data} currentPosts={currentPosts}/>
+       <ProductsChoices data={data} currentPosts={currentPosts}/>
        {/*<Pagination paginate={paginate} postsPerPage={postsPerPage} totalPosts={data.length}/>*/}
       </main>
   </div>
