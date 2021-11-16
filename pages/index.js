@@ -1,7 +1,6 @@
 //components
 import NavBar from "@components/navBar/navBar";
 import FilterBar from '@components/FilterBar/FilterBar';
-import Caroussel from '@components/Caroussel';
 import ProductsChoices from "@components/ProductsChoices/ProductsChoices";
 import SubTitle from '@components/subTitle/subTitle';
 //vendors
@@ -41,11 +40,20 @@ export async function getServerSideProps(){
   
   const res = await fetch('https://makeup-api.herokuapp.com/api/v1/products.json')
   const data = await res.json()
+  if(!data){
+    return {
+      redirect: {
+        destination: '/screens/notFound/notFound',
+        permanent: false
+      }
+    }
+  }
   return{
     props:{
       data
     }
   }
+ 
 }
 
 
